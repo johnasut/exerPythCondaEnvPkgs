@@ -37,34 +37,41 @@
 
 |   Concept   |         Description or short answer         |
 |     ---     |                     ---                     |
-|What is the purpose of having different environments?     |(enter description or short answer here)|
-|What is the default package manager in Python?            |(enter description or short answer here)|
-|How do you manage environments and packages in Anaconda?  |(enter description or short answer here)|
-|`conda list`       |(enter description or short answer here)|
-|`conda env list`       |(enter description or short answer here)|
-|How do you keep your base environment unchanged?       |(enter description or short answer here)|
-|What is the link to the Conda cheat sheet? (link in video notes is broken)      |(enter description or short answer here)|
-|`conda create --name XXXX`       |(enter description or short answer here)|
-|`source activate XXXX`       |(enter description or short answer here)|
-|`conda install YYYY`       |(enter description or short answer here)|
-|channels in Conda       |(enter description or short answer here)|
-|`conda install -c ZZZZ YYYY`       |(enter description or short answer here)|
-|`conda config --show channels`       |(enter description or short answer here)|
-|`conda config --add channels ZZZZ`       |(enter description or short answer here)|
-|conda-forge.org       |(enter description or short answer here)|
-|`source deactivate`       |(enter description or short answer here)|
-|`conda config --get channels`       |(enter description or short answer here)|
+|What is the purpose of having different environments?     |To allow work using different tools like packages or software versions that may be required for different projects without having to make changes to your computer every time you switch between projects.|
+|What is the default package manager in Python?            |PIP|
+|How do you manage environments and packages in Anaconda?  |Use Conda installed with Anaconda.|
+|`conda list`       |Lists all packages installed with Conda in the environment you are currently using.|
+|`conda env list`       |Lists all environments available.|
+|How do you keep your base environment unchanged?       |Create a new virtual environment and conduct your tasks there.|
+|What is the link to the Conda cheat sheet? (link in video notes is broken)      |https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf|
+|`conda create --name XXXX`       |Creates new Conda environment named XXXX.|
+|`source activate XXXX`       |Switch from whatever environment you are currently in to the XXXX environment (although mine seems to prefer the command `conda activate XXXX` for some reason.)|
+|`conda install YYYY`       |Install the specified package into the active environment.|
+|channels in Conda       |Where Conda is looking to find packages available for installation.|
+|`conda install -c ZZZZ YYYY`       |Search the specific channel ZZZZ to find and install package YYYY. Does not remember this channel for future installations.|
+|`conda config --show channels`       |List the channels Conda is currently searching when the `conda install YYYY` command is used.|
+|`conda config --add channels ZZZZ`       |Add the channel ZZZZ to the list of channels Conda will search when the `conda install YYYY` command is used when installing packages in any environment.|
+|conda-forge.org       |"A community led collection of recipies, build infrastructure, and distrbutions for the conda package manager." A channel with lots of custom packages that can be installed.|
+|`source deactivate`       |In the video this returns the user to the base environment. Mine would only accept the command `conda deactivate` which instead returned me to the last environment active prior to the one I was in.|
+|`conda config --get channels`       |List available channels along with their "priorities" or the order in which the channels are searched for packages. Important in case a higher priority channel has a different version of the package than the one you want. In this case, you would want to specify the installation using the `conda install -c ZZZZ YYYY` command.|
 
 * After creating the environments he created in the video on your computer, what would the results of running the command `conda env list` look like with the da35 environment activated. Paste the output from your command prompt in the code block below.
 
 ```
-#Paste your results here.
+# conda environments:
+#
+base                     C:\Users\John\Anaconda3
+Playpen                  C:\Users\John\Anaconda3\envs\Playpen
+ai37                     C:\Users\John\Anaconda3\envs\ai37
+ai38                     C:\Users\John\Anaconda3\envs\ai38
+da35                  *  C:\Users\John\Anaconda3\envs\da35
+test                     C:\Users\John\Anaconda3\envs\test
 
 
 ```
 * What command would you use to remove the environments you created for this exercise from your computer?
 
 ```
-#Type the command here.
+conda env remove --name XXXX
 
 ```
